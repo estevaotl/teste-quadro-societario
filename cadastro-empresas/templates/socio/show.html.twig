@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visualizar Sócio{% endblock %}
+
+{% block body %}
+    <h1>{{ socio.nome }}</h1>
+    <p><strong>CPF:</strong> {{ socio.cpf }}</p>
+    <p><strong>Empresa:</strong> {{ socio.empresa.nome }}</p>
+
+    <a href="{{ path('socio_index', {'empresaId': empresaId}) }}" class="btn btn-secondary">Voltar à lista de Sócios</a>
+{% endblock %}

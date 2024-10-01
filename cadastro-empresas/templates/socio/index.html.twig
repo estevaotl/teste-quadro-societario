@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Sócios da {{ empresa.nome }}{% endblock %}
+
+{% block body %}
+    <h1>Lista de Sócios da {{ empresa.nome }}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for socio in socios %}
+                <tr>
+                    <td>{{ socio.nome }}</td>
+                    <td>{{ socio.cpf }}</td>
+                    <td>
+                        <a href="{{ path('socio_edit', {'empresaId': empresa.id, 'id': socio.id}) }}" class="btn btn-warning">Editar</a>
+                        <a href="{{ path('socio_delete', {'empresaId': empresa.id, 'id': socio.id}) }}" class="btn btn-danger">Remover</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Nenhum sócio encontrado.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('socio_new', {'empresaId': empresa.id}) }}" class="btn btn-success">Cadastrar Novo Sócio</a>
+    <a href="{{ path('empresa_index') }}" class="btn btn-secondary">Voltar à lista de Empresas</a>
+{% endblock %}

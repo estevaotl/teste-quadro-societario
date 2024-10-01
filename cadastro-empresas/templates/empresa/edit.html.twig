@@ -1,0 +1,30 @@
+{# templates/empresa/edit.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Editar Empresa</h1>
+
+     {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.nome) }}
+            {{ form_widget(form.nome, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.nome) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.cnpj) }}
+            {{ form_widget(form.cnpj, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.cnpj) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.endereco) }}
+            {{ form_widget(form.endereco, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.endereco) }}
+        </div>
+
+        <div class="form-group div-botoes-rodape">
+            <button class="btn btn-success">Salvar</button>
+            <a href="{{ path('empresa_index') }}"><button class="btn btn-secondary">Voltar</button></a>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

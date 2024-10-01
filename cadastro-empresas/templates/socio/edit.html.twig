@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Sócio{% endblock %}
+
+{% block body %}
+    <h1>Editar Sócio</h1>
+
+     {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.nome) }}
+            {{ form_widget(form.nome, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.nome) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.cpf) }}
+            {{ form_widget(form.cpf, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.cpf) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.empresa) }}
+            {{ form_widget(form.empresa, {'attr': {'class': 'form-control', "disabled": true}}) }}
+            {{ form_errors(form.empresa) }}
+        </div>
+
+        <div class="form-group div-botoes-rodape">
+            <button class="btn btn-success">Salvar</button>
+           <a href="{{ path('socio_index', {'empresaId': empresaId}) }}" class="btn btn-secondary">Voltar à lista de Sócios</a>
+        </div>
+{% endblock %}

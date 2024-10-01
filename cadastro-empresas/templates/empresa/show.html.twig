@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visualizar Empresa{% endblock %}
+
+{% block body %}
+    <h1>{{ empresa.nome }}</h1>
+    <p><strong>CNPJ:</strong> {{ empresa.cnpj }}</p>
+
+    <h2>Sócios</h2>
+    <ul>
+        {% for socio in empresa.socios %}
+            <li>{{ socio.nome }}</li>
+        {% else %}
+            <li>Não há sócios cadastrados para esta empresa.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('empresa_index') }}" class="btn btn-secondary">Voltar à lista</a>
+{% endblock %}

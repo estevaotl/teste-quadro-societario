@@ -1,0 +1,11 @@
+{
+    "require": {
+        "symfony/webapp-pack": "^1.3",
+        "symfony/runtime": "^6.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}
