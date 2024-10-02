@@ -17,6 +17,12 @@
     - PostgreSQL
 - Para importar os pacotes, utilizei o Composer.
 
+## Requisitos
+
+- Ter o composer instalado
+- PHP na versão 8.1 ou maior
+- Ter o PostgreSQL instalado, seja o proprio programa ou um servidor a parte, como o Laragon
+
 ## Como Utilizar
 
 - Rodar `composer install` tanto na index quanto na pasta `cadastro-empresas`
